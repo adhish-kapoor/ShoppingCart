@@ -1,15 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
 </head>
+
 <body>
-    <a href="admin.html">Click to log in as Admin</a>
-    
-    
+    <header>
+        <nav class="navbar navbar-expand-sm bg-light">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Add Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="showproducts.html">Show Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="showcart.html">Show Cart</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div id="products">
+
+        <label>Name</label>
+        <input type="text" id="name" v-model="productName">
+        <br>
+        <label>Vendors</label>
+        <select id="vendorName" v-model="productVendor">
+            <option value="" selected>--Select--</option>
+            <option v-for="vendor in vendors" v-bind:value="vendor.id">{{vendor.name}}</option>
+        </select>
+        <br>
+
+        <label>Price</label>
+        <input type="text" id="price" v-model="productPrice">
+        <br>
+        <button v-on:click="addProducts">Add Product</button>
+
+
+
+    </div>
+
+
+    <script src="./lib/vue.js"></script>
+    <script src="./lib/axios.min.js"></script>
+    <script src="./js/addproduct.js"></script>
 </body>
+
 </html>

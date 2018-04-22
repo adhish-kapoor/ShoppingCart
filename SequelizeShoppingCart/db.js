@@ -42,5 +42,6 @@ db.sync()
 
 module.exports={
      Vendor,
-     Product
+     Product,
+     Cart
 }
